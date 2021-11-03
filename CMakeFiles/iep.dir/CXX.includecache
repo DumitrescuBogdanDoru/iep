@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bogdan/Desktop/iep/src/adventure.hpp
+iostream
+-
+motocicleta.hpp
+/home/bogdan/Desktop/iep/src/motocicleta.hpp
+
+/home/bogdan/Desktop/iep/src/chopper.hpp
+iostream
+-
+motocicleta.hpp
+/home/bogdan/Desktop/iep/src/motocicleta.hpp
+
+/home/bogdan/Desktop/iep/src/main.cpp
+iostream
+-
+adventure.hpp
+/home/bogdan/Desktop/iep/src/adventure.hpp
+chopper.hpp
+/home/bogdan/Desktop/iep/src/chopper.hpp
+
+/home/bogdan/Desktop/iep/src/motocicleta.hpp
+iostream
+-
+
