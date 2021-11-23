@@ -42,6 +42,7 @@ class Chopper: public Motocicleta {
         if(this == &chop) {
             std::cout << "self-assignment" << std::endl;
         } else {
+            Motocicleta::operator=(chop);
             volumRezervor = chop.volumRezervor;
             inaltimeGhidon = chop.inaltimeGhidon;
         }

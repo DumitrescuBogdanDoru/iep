@@ -42,6 +42,7 @@ class Adventure: public Motocicleta {
         if(this == &adv) {
             std::cout << "self-assignment" << std::endl;
         } else {
+            Motocicleta::operator=(adv);
             gardaSol = adv.gardaSol;
             inaltimeSa = adv.inaltimeSa;
         }
