@@ -6,8 +6,6 @@ class Adventure: public Motocicleta {
    private:
         int gardaSol;
         int inaltimeSa;
-        Adventure(const Adventure &adv);
-        Adventure& operator = (Adventure const &adv);
    
    public:
         Adventure(std::string f, std::string m, int a, int gs, int hs);
@@ -17,6 +15,8 @@ class Adventure: public Motocicleta {
         int getGardaSol();
         int getInaltimeSa();
         void print();
+        Adventure(const Adventure &adv);
+        Adventure& operator= (Adventure const &adv);
 };
 
     Adventure::Adventure(std::string f, std::string m, int a, int gs, int hs) : 
@@ -26,24 +26,28 @@ class Adventure: public Motocicleta {
     {
         std::cout << "Adventure constructor called" << std::endl;
     }
-    /*
+    
     Adventure::Adventure(const Adventure &adv) : Motocicleta(adv.firma, adv.model, adv.an) {
         gardaSol = adv.gardaSol;
         inaltimeSa = adv.inaltimeSa;
         std::cout << "Adventure copy constructor called" << std::endl;
     }
-    */
+
     Adventure::~Adventure() {
         std::cout << "Adventure deconstructor" << std::endl;
     }
-    /*
-    Adventure& Adventure::operator = (Adventure const &adv) {
+   
+    Adventure& Adventure::operator= (Adventure const &adv) {
         std::cout << "Adventure assignment operator called" << std::endl;
-        gardaSol = adv.gardaSol;
-        inaltimeSa = adv.inaltimeSa;
+        if(this == &adv) {
+            std::cout << "self-assignment" << std::endl;
+        } else {
+            gardaSol = adv.gardaSol;
+            inaltimeSa = adv.inaltimeSa;
+        }
         return *this;
     }
-    */  
+     
     void Adventure::setGardaSol(int gs) {
         gardaSol = gs;
     }

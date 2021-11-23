@@ -16,10 +16,8 @@ class Motocicleta {
         std::string getFirma();
         std::string getModel();
         int getAn();;
-    
-    private:
         Motocicleta(const Motocicleta&);
-        Motocicleta& operator = (const Motocicleta&);
+        Motocicleta& operator= (const Motocicleta& moto);
 };
 
     Motocicleta::Motocicleta(std::string f, std::string m, int a) : 
@@ -29,24 +27,28 @@ class Motocicleta {
     {
         std::cout << "Motocicleta constructor called" << std::endl;
     }
-    /*    
+       
     Motocicleta::Motocicleta(const Motocicleta& motocicleta) {
         std::cout << "Motocicleta copy constructor called" << std::endl;
         *this = motocicleta;
     }
-    */
+
     Motocicleta::~Motocicleta() {
         std::cout << "Motocicleta deconstructor called" << std::endl;
     }
-    /*
-    Motocicleta& Motocicleta::operator = (const Motocicleta& moto) {
+    
+    Motocicleta& Motocicleta::operator= (const Motocicleta& moto) {
         std::cout << "Motocicleta assignment operator called" << std::endl;
-        firma = moto.firma;
-        model = moto.model;
-        an = moto.an;
+        if(this == &moto) {
+            std::cout << "self-assignment" << std::endl;
+        } else {
+            firma = moto.firma;
+            model = moto.model;
+            an = moto.an;
+        }
         return *this;
         }
-    */
+    
     void Motocicleta::setFirma(std::string f) {
         firma = f;
     }

@@ -6,8 +6,6 @@ class Chopper: public Motocicleta {
     private:
         int volumRezervor;
         int inaltimeGhidon;
-        Chopper(const Chopper &chop);
-        Chopper& operator = (const Chopper& chop);
 
     public:
         Chopper(std::string f, std::string m, int a, int vr, int hg);
@@ -17,6 +15,8 @@ class Chopper: public Motocicleta {
         int getVolumRezervor();
         int getInaltimeGhidon();
         void print();
+        Chopper(const Chopper &chop);
+        Chopper& operator= (const Chopper& chop);
 };
 
     Chopper::Chopper(std::string f, std::string m, int a, int vr, int hg) : 
@@ -30,20 +30,24 @@ class Chopper: public Motocicleta {
     Chopper::~Chopper() {
         std::cout << "Chopper deconstructor called" << std::endl;
     } 
-    /*
+   
     Chopper::Chopper(const Chopper &chop) : Motocicleta(chop.firma, chop.model, chop.an){
         volumRezervor = chop.volumRezervor;
         inaltimeGhidon = chop.inaltimeGhidon;
         std::cout << "Chopper copy constructor called" << std::endl;
     }
 
-    Chopper& Chopper::operator = (const Chopper& chop){
+    Chopper& Chopper::operator= (const Chopper& chop){
         std::cout << "Chopper assignment operator called" << std::endl;
-        volumRezervor = chop.volumRezervor;
-        inaltimeGhidon = chop.inaltimeGhidon;
+        if(this == &chop) {
+            std::cout << "self-assignment" << std::endl;
+        } else {
+            volumRezervor = chop.volumRezervor;
+            inaltimeGhidon = chop.inaltimeGhidon;
+        }
         return *this;
     }
-    */
+   
     void Chopper::setVolumRezervor(int vr) {
         volumRezervor = vr;
     }
