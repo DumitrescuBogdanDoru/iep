@@ -6,6 +6,7 @@ class Adventure: public Motocicleta {
    private:
         int gardaSol;
         int inaltimeSa;
+        
    
    public:
         Adventure(std::string f, std::string m, int a, int gs, int hs);

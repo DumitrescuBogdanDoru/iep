@@ -6,6 +6,7 @@ class Motocicleta {
         std::string firma;
         std::string model;
         int an;
+       
 
     public:
         Motocicleta(std::string f, std::string m, int a);
@@ -15,8 +16,8 @@ class Motocicleta {
         void setAn(int a);
         std::string getFirma();
         std::string getModel();
-        int getAn();;
-        Motocicleta(const Motocicleta&);
+        int getAn();
+         Motocicleta(const Motocicleta&);
         Motocicleta& operator= (const Motocicleta& moto);
 };
 

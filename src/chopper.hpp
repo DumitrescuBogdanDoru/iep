@@ -6,7 +6,7 @@ class Chopper: public Motocicleta {
     private:
         int volumRezervor;
         int inaltimeGhidon;
-
+        
     public:
         Chopper(std::string f, std::string m, int a, int vr, int hg);
         virtual ~Chopper();
@@ -15,8 +15,9 @@ class Chopper: public Motocicleta {
         int getVolumRezervor();
         int getInaltimeGhidon();
         void print();
-        Chopper(const Chopper &chop);
+       Chopper(const Chopper &chop);
         Chopper& operator= (const Chopper& chop);
+
 };
 
     Chopper::Chopper(std::string f, std::string m, int a, int vr, int hg) : 
